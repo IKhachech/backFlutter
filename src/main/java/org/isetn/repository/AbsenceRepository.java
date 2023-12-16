@@ -1,5 +1,6 @@
 package org.isetn.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,4 +13,6 @@ import org.springframework.stereotype.Repository;
 public interface AbsenceRepository extends JpaRepository<Absence, Long> {
     // You can add custom query methods here if needed
     List<Absence> findByEtudiantId(Long codClass);
+    List<Absence> findByMatiereMatiereIdAndDateBetween(Long matiereId, LocalDateTime startDate, LocalDateTime endDate);
+
 }
